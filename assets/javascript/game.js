@@ -5,27 +5,33 @@ var submit = document.getElementById('submit');
 var userGuesses = document.getElementById('guesses');
 var userWins = document.getElementById('user-wins');
 var userLosses = document.getElementById('user-losses');
+var remainingGuesses = document.getElementById('guesses-remaining')
+
 
 // Creating variables for the number of wins and losses with the starting point being 0.
 var wins = 0;
 var losses = 0;
+var guessesRemaining = 10;
 
 // Creating a function that first places the letters in-play into an array. 
 function computer() {
   // Creating a variable that places the letters in-play into an array.
-  var alphabetLetters = ['a', 'b'];
+  var alphabetLetters = ['a', 'e', 'i', 'o', 'u'];
   // Creating a variable for the letter that the computer picks. Math.floor(Math.random() is a built-in method in which the computer will randomly pick a value from a select data set. In this case it is the array assigned to "alphabetLetters".
   var computerGuess = alphabetLetters[Math.floor(Math.random() * alphabetLetters.length)];
   // Creating an if/else statement that says if the random letter the computer picks equals (value and value-type, hence the "===") the letter the user picks, then increment total wins by 1. If the letters don't equal, the increment the total losses by 1. The .value associated with var userGuess specifics the specific key that is entered in the form inout field.
   if (computerGuess === userGuess.value) {
     wins++;
+    guessesRemaining--;
   } else {
     losses++;
+    guessesRemaining--;
   }
   // This will print to the DOM the number of wins, losses and display what the computer actually picked plus the messages in front of the variables.
   userWins.innerHTML = `Your win total is: ${wins}`;
   userLosses.innerHTML = `Your loss total is ${losses}`;
   compChoice.innerHTML = `The computer picked ${computerGuess}.`
+  remainingGuesses.innerHTML = `Your remaining guesses: ${guessesRemaining}`
 }
 
 // This is an event function that listens for the user clicking the "Submit" button. After the button is clicked, the fuunction computer() is called and the instructions are run.
