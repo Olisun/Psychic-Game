@@ -29,13 +29,21 @@ function computer() {
   }
   // This will print to the DOM the number of wins, losses and display what the computer actually picked plus the messages in front of the variables.
   userWins.innerHTML = `Your win total is: ${wins}`;
-  userLosses.innerHTML = `Your loss total is ${losses}`;
-  compChoice.innerHTML = `The computer picked ${computerGuess}.`
+  userLosses.innerHTML = `Your loss total is: ${losses}`;
+  compChoice.innerHTML = `The computer picked vowel: ${computerGuess}.`
   remainingGuesses.innerHTML = `Your remaining guesses: ${guessesRemaining}`
+}
+
+// This function will alert the user that the game is over when their guesses run out. 
+function gameOver() {
+  if (guessesRemaining < 1) {
+    alert('Game Over')
+  }
 }
 
 // This is an event function that listens for the user clicking the "Submit" button. After the button is clicked, the fuunction computer() is called and the instructions are run.
 submit.addEventListener('click', () => {
+  // Calling the computer function to activate the game upon click
   computer();
   // creating variables 
   var input = document.getElementById('user-guess')
@@ -45,9 +53,8 @@ submit.addEventListener('click', () => {
   li.appendChild(document.createTextNode(input.value));
   ol.appendChild(li);
   input.value = '';
-
-
-
+  // Calling the gameover function to end the game when te guesses run out for the user.
+  gameOver();
 })
 
 // var alphabetLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];

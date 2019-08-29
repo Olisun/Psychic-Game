@@ -1,22 +1,54 @@
-# Psychic-Game
+# HW-Wireframe
 
-## Page previews: 
-![](assets/images/screen-shot1.png)
-![](assets/images/screen-shot2.png)
+## Page preview (Mine): 
+![](img/HW-Wireframe.png)
+
+## Page preview (Mockup from Class): 
+![](img/Class-Mockup.png)
 
 ## About the project:
-  * Created a guessing game where the computer randomly picks a vowel randomly. The user must type a letter in the input field and submit it. If the user and computer picks the same vowel, the user wins. Otherwise the user loses. Wins, losses and guesses remaining are tracked.
+  * I remade the HW-Wireframe using floats and clearfix. No grids.
+  * For our first homework assignment, we had to make a replica of a basic wireframe. We were given the following specs:
+
+  * Needs to have:
+    * Header
+    * Nav
+    * Aside (With a Heading)
+    * Section (With a Heading)
+    * Article (With a Heading) contained within the Section
+    * Headers contained within the Article
+    * Paragraph contained within the Article
+
+
+  * CSS should have styles for each of the following elements:
+    * Body
+    * font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    * color: '#777'
+    * background: '#777'
+    * width: '960px'
+    * font-size: '18px'
+  
+  * Header, Nav, Section, Aside, and Footer
+    * background: '#ebebeb'
+
+  * Article
+    * color: '#ebebeb',
+    * background: '#777'
+
+  * h1 and p
+    * color: '#777',
+    * background: '#ebebeb'
+
+  * The width of the section should be:
+
+    * section: 495px
 
 ## Techologies used to build:
   * HTML
-  * Javascript
+  * CSS
 
 ## Methodology:
-  I wanted to get the easier homework assignment completed first before trying the harder one.
 
-  I created an array of vowels for the computer to pick from (entire alphabet was too long to guess a match). I used the math.floor(math.round) method to get the computer to randomly pick a vowel.
-  
-  The user is asked to input a value on the DOM into an input field and then submit their guess via button element. I then created an event listener function that, when fired, to compare the user input.value to the random computer guess. It also appends the user's guesses to the DOM so the user can see what they guessed
+I basically trashed the old html and css files and started from scratch. After reviewing class notes on floats, positioning, clearfix and the box-model, I created the required elements and associated classes. I also made id's taregeting the text so I could position the text accordingly.
 
-  If there is a match, the user's score increases and the user's guesses remaining decreases. The DOM also displays what the computer guessed. 
 
